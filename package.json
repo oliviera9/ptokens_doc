@@ -1,7 +1,7 @@
 {
-  "name": "execution-apis",
-  "version": "0.0.0",
-  "description": "Collection of JSON-RPC APIs provided by Ethereum 1.0 clients",
+  "name": "ptokens-rpc-api",
+  "version": "2.0.0",
+  "description": "Collection of JSON-RPC APIs provided by ptokens 2.0 clients",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -10,16 +10,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ethereum/execution-apis.git"
+    "url": "git+https://github.com/oliviera9/ptokens_doc.git"
   },
-  "author": "Ethereum",
+  "author": "pTokens",
   "license": "CC0-1.0",
   "bugs": {
-    "url": "https://github.com/ethereum/execution-apis/issues"
+    "url": "https://github.com/oliviera9/ptokens_doc/issues"
   },
-  "homepage": "https://github.com/ethereum/execution-apis#readme",
+  "homepage": "https://github.com/oliviera9/ptokens_doc#readme",
   "dependencies": {
     "@open-rpc/schema-utils-js": "^1.15.0",
+    "ajv-cli": "^5.0.0",
     "json-schema-merge-allof": "^0.8.1"
   }
 }

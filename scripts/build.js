@@ -5,7 +5,7 @@ import { dereferenceDocument } from "@open-rpc/schema-utils-js";
 console.log("Loading files...\n");
 
 let methods = [];
-let methodsBase = "src/eth/";
+let methodsBase = "src/ptokens/";
 let methodFiles = fs.readdirSync(methodsBase);
 methodFiles.forEach(file => {
   console.log(file);
@@ -32,13 +32,13 @@ schemaFiles.forEach(file => {
 const doc = {
   openrpc: "1.2.4",
   info: {
-    title: "Ethereum JSON-RPC Specification",
-    description: "A specification of the standard interface for Ethereum clients.",
+    title: "pTokens JSON-RPC Specification",
+    description: "A specification of the standard interface for a pTokens bridge client.",
     license: {
       name: "CC0-1.0",
       url: "https://creativecommons.org/publicdomain/zero/1.0/legalcode"
     },
-    version: "0.0.0"
+    version: "2.0.0"
   },
   methods: methods,
   components: {

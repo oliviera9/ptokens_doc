@@ -1,0 +1,26 @@
+{
+	"DepositAddress": {
+		"name": "DepositAddress",
+		"type": "object",
+		"properties": {
+			"enclavePublicKey": {
+				"type": "string"
+			},
+			"nonce": {
+				"type": "integer"
+			},
+			"nativeDepositAddress": {
+				"type": "string"
+			}
+		},
+		"required": [
+			"enclavePublicKey",
+			"nonce",
+			"nativeDepositAddress"
+		]
+	},
+	"DepositAddressArray": {
+		"type": "array",
+		"items": {"$ref": "#/components/schemas/DepositAddress"}
+	}
+}
