@@ -1,10 +1,8 @@
-# Ethereum JSON-RPC Specification
+# pTokens bridge JSON-RPC Specification
 
 [View the spec][playground]
 
-The Ethereum JSON-RPC is a collection of methods that all clients implement.
-This interface allows downstream tooling and infrastructure to treat different
-Ethereum clients as modules that can be swapped at will.
+The pTokens JSON-RPC is a collection of methods that all bridges implement.
 
 ## Building
 
