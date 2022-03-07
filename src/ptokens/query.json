@@ -1,0 +1,624 @@
+[{
+		"name": "app_queryReport",
+		"summary": "Returns query report by nonce.",
+		"params": [{
+				"name": "Report Type",
+				"required": true,
+				"schema": {
+					"title": "report type",
+					"type": "string"
+				}
+			},
+			{
+				"name": "Nonce",
+				"required": true,
+				"schema": {
+					"title": "nonce",
+					"type": "integer"
+				}
+			}
+		],
+		"result": {
+			"name": "Query report",
+			"schema": {
+				"$ref": "#/components/schemas/Report"
+			}
+		},
+		"examples": [{
+				"name": "TLOS on BSC host",
+				"description": "app_queryReport result for host report in the TLOS on BSC bridge",
+				"params": [{
+						"name": "Report Type",
+						"value": "host"
+					},
+					{
+						"name": "Nonce",
+						"value": 0
+					}
+				],
+				"result": {
+					"name": "_",
+					"value": {
+						"broadcast": true,
+						"host_tx_hash": "0xffa65ef96f8691c8180b270a1954a55d8bc7e33187c338168b364bf8ab0982fa",
+						"host_tx_amount": "1000000000000000000",
+						"host_tx_recipient": "0x8127192c2e4703dfb47f087883cc3120fe061cb8",
+						"witnessed_timestamp": 1618922170,
+						"host_token_address": "0xb6c53431608e626ac81a9776ac3e999c5556717c",
+						"originating_tx_hash": "385678a6cc0c81c422a49e24c561a94387890b7da3061f356fb4d6d1ea4093fc",
+						"originating_address": "whateverxxxy",
+						"native_token_address": "eosio.token",
+						"any_sender_nonce": null,
+						"host_account_nonce": 0,
+						"host_latest_block_number": 6729971,
+						"broadcast_tx_hash": "0xffa65ef96f8691c8180b270a1954a55d8bc7e33187c338168b364bf8ab0982fa",
+						"broadcast_timestamp": 1618922204,
+						"any_sender_tx": null
+					}
+				}
+			},
+			{
+				"name": "TLOS on BSC native",
+				"description": "app_queryReport result for native report in the TLOS on BSC bridge",
+				"params": [{
+						"name": "Report Type",
+						"value": "native"
+					},
+					{
+						"name": "Nonce",
+						"value": 0
+					}
+				],
+				"result": {
+					"name": "_",
+					"value": {
+						"broadcast": true,
+						"native_tx_amount": "21470.7375 TLOS",
+						"host_tx_amount": "21470737511409585027344",
+						"native_account_nonce": 0,
+						"native_tx_recipient": "xbsc.ptokens",
+						"witnessed_timestamp": 1619099008,
+						"host_token_address": "0xb6c53431608e626ac81a9776ac3e999c5556717c",
+						"originating_tx_hash": "0xeeb0cca85ce77c3cb0a54192b4b24012e467d7703e78ddfab008ecc85e30412b",
+						"originating_address": "0xf3d0d9bbd5e4c0faf773ca6acce20c3b607d2b1a",
+						"native_latest_block_number": 148401333,
+						"native_token_address": "eosio.token",
+						"broadcast_tx_hash": "7853dd73d7a9d8ed0ac302cd748df966654994cf29833c82de8d534320db4d37",
+						"broadcast_timestamp": 1619099218
+					}
+				}
+			}
+		]
+	},
+	{
+		"name": "app_querySender",
+		"summary": "Returns query report by originating address.",
+		"params": [{
+				"name": "Sender Address",
+				"required": true,
+				"schema": {
+					"title": "address",
+					"type": "string"
+				}
+			},
+			{
+				"name": "Limit",
+				"required": true,
+				"schema": {
+					"title": "limit",
+					"type": "integer"
+				}
+			}
+		],
+		"result": {
+			"name": "Query report",
+			"schema": {
+				"$ref": "#/components/schemas/ReportArray"
+			}
+		},
+		"examples": [{
+			"name": "BSC originating address in TLOS on BSC bridge",
+			"description": "app_querySender result for the TLOS on BSC bridge",
+			"params": [{
+					"name": "Sender Address",
+					"value": "0xc8d59c57b8c58eac1622c7a639e10bf8b1e3df9d"
+				},
+				{
+					"name": "Limit",
+					"value": 3
+				}
+			],
+			"result": {
+				"name": "_",
+				"value": [{
+					"broadcast": true,
+					"native_tx_amount": "0.0997 TLOS",
+					"host_tx_amount": "99750000000000000",
+					"native_account_nonce": 2323,
+					"native_tx_recipient": "xbsc.ptokens",
+					"witnessed_timestamp": 1644592188,
+					"host_token_address": "0xb6c53431608e626ac81a9776ac3e999c5556717c",
+					"originating_tx_hash": "0xf546a1d6d81e79f73045802f4f8bc2bee72c4ec2038de70cdfefab633ceec8d5",
+					"originating_address": "0xc8d59c57b8c58eac1622c7a639e10bf8b1e3df9d",
+					"native_latest_block_number": 199337747,
+					"native_token_address": "eosio.token",
+					"broadcast_tx_hash": "0d25e7aaf84455d27cbf862db1d72a4ee81324ad2ecf0ce9e8c9b0f0295de457",
+					"broadcast_timestamp": 1644592189
+				}, {
+					"broadcast": true,
+					"native_tx_amount": "9.9750 TLOS",
+					"host_tx_amount": "9975000000000000000",
+					"native_account_nonce": 2324,
+					"native_tx_recipient": "xbsc.ptokens",
+					"witnessed_timestamp": 1644592339,
+					"host_token_address": "0xb6c53431608e626ac81a9776ac3e999c5556717c",
+					"originating_tx_hash": "0x81a298b4b522dd6c5525f4d92bcd247213e41065bb59350dda34837d1febd4f4",
+					"originating_address": "0xc8d59c57b8c58eac1622c7a639e10bf8b1e3df9d",
+					"native_latest_block_number": 199337747,
+					"native_token_address": "eosio.token",
+					"broadcast_tx_hash": "98163c278c41cdf0fb40878eff1228014c87c067f326681eaf7eb0aab5dc7c99",
+					"broadcast_timestamp": 1644592344
+				}]
+			}
+		}]
+	},
+	{
+		"name": "app_queryRecipient",
+		"summary": "Returns query report by recipient.",
+		"params": [{
+				"name": "Recipient Address",
+				"required": true,
+				"schema": {
+					"title": "address",
+					"type": "string"
+				}
+			},
+			{
+				"name": "Limit",
+				"required": true,
+				"schema": {
+					"title": "limit",
+					"type": "integer"
+				}
+			}
+		],
+		"result": {
+			"name": "Query report",
+			"schema": {
+				"$ref": "#/components/schemas/ReportArray"
+			}
+		},
+		"examples": [{
+				"name": "TLOS on BSC",
+				"description": "app_queryRecipient result for the TLOS on BSC bridge",
+				"params": [{
+						"name": "Recipient Address",
+						"value": "xbsc.ptokens"
+					},
+					{
+						"name": "Limit",
+						"value": 3
+					}
+				],
+				"result": {
+					"name": "_",
+					"value": [{
+						"broadcast": true,
+						"native_tx_amount": "21470.7375 TLOS",
+						"host_tx_amount": "21470737511409585027344",
+						"native_account_nonce": 0,
+						"native_tx_recipient": "xbsc.ptokens",
+						"witnessed_timestamp": 1619099008,
+						"host_token_address": "0xb6c53431608e626ac81a9776ac3e999c5556717c",
+						"originating_tx_hash": "0xeeb0cca85ce77c3cb0a54192b4b24012e467d7703e78ddfab008ecc85e30412b",
+						"originating_address": "0xf3d0d9bbd5e4c0faf773ca6acce20c3b607d2b1a",
+						"native_latest_block_number": 148401333,
+						"native_token_address": "eosio.token",
+						"broadcast_tx_hash": "7853dd73d7a9d8ed0ac302cd748df966654994cf29833c82de8d534320db4d37",
+						"broadcast_timestamp": 1619099218
+					}, {
+						"broadcast": true,
+						"native_tx_amount": "308.2843 TLOS",
+						"host_tx_amount": "308284355094381946280",
+						"native_account_nonce": 1,
+						"native_tx_recipient": "xbsc.ptokens",
+						"witnessed_timestamp": 1619099315,
+						"host_token_address": "0xb6c53431608e626ac81a9776ac3e999c5556717c",
+						"originating_tx_hash": "0x82c878649a794f1b9a7c940976f75692b91e3511c7395047d27abc8ac1638d35",
+						"originating_address": "0x3255f62bbd1317ed1590228f287be8d602d78443",
+						"native_latest_block_number": 148401732,
+						"native_token_address": "eosio.token",
+						"broadcast_tx_hash": "2d7c56a1181718701453b0146369408136cce816393c23f0399c55758a214943",
+						"broadcast_timestamp": 1619099368
+					}]
+				}
+			},
+			{
+				"name": "TLOS on BSC",
+				"description": "app_queryRecipient result for the TLOS on BSC bridge",
+				"params": [{
+						"name": "Recipient Address",
+						"value": "0x8127192c2e4703dfb47f087883cc3120fe061cb8"
+					},
+					{
+						"name": "Limit",
+						"value": 3
+					}
+				],
+				"result": {
+					"name": "_",
+					"value": [{
+						"broadcast": true,
+						"host_tx_hash": "0xffa65ef96f8691c8180b270a1954a55d8bc7e33187c338168b364bf8ab0982fa",
+						"host_tx_amount": "1000000000000000000",
+						"host_tx_recipient": "0x8127192c2e4703dfb47f087883cc3120fe061cb8",
+						"witnessed_timestamp": 1618922170,
+						"host_token_address": "0xb6c53431608e626ac81a9776ac3e999c5556717c",
+						"originating_tx_hash": "385678a6cc0c81c422a49e24c561a94387890b7da3061f356fb4d6d1ea4093fc",
+						"originating_address": "whateverxxxy",
+						"native_token_address": "eosio.token",
+						"any_sender_nonce": null,
+						"host_account_nonce": 0,
+						"host_latest_block_number": 6729971,
+						"broadcast_tx_hash": "0xffa65ef96f8691c8180b270a1954a55d8bc7e33187c338168b364bf8ab0982fa",
+						"broadcast_timestamp": 1618922204,
+						"any_sender_tx": null
+					}, {
+						"broadcast": true,
+						"host_tx_hash": "0x6141c49a0412456537bf0060f036a9c5c0e419993c26787197f542e9fcbf355a",
+						"host_tx_amount": "100000000000000000",
+						"host_tx_recipient": "0x8127192c2e4703dfb47f087883cc3120fe061cb8",
+						"witnessed_timestamp": 1618922498,
+						"host_token_address": "0xb6c53431608e626ac81a9776ac3e999c5556717c",
+						"originating_tx_hash": "c4e45892284d34b20ed2265bce6b5ec0e8536e294867862aeb099aa2b0146ece",
+						"originating_address": "whateverxxxy",
+						"native_token_address": "eosio.token",
+						"any_sender_nonce": null,
+						"host_account_nonce": 1,
+						"host_latest_block_number": 6730003,
+						"broadcast_tx_hash": "0x6141c49a0412456537bf0060f036a9c5c0e419993c26787197f542e9fcbf355a",
+						"broadcast_timestamp": 1618922500,
+						"any_sender_tx": null
+					}]
+				}
+			}
+		]
+	},
+	{
+		"name": "app_queryNativeAddress",
+		"summary": "Returns query report by native address (filtering through `originating_address` field).",
+		"params": [{
+				"name": "Native Address",
+				"required": true,
+				"schema": {
+					"title": "address",
+					"type": "string"
+				}
+			},
+			{
+				"name": "Limit",
+				"required": true,
+				"schema": {
+					"title": "limit",
+					"type": "integer"
+				}
+			}
+		],
+		"result": {
+			"name": "Query sender",
+			"schema": {
+				"$ref": "#/components/schemas/HostReport"
+			}
+		},
+		"examples": [{
+			"name": "TLOS on BSC",
+			"description": "app_getInfo result for the TLOS on BSC bridge",
+			"params": [{
+					"name": "Native Address",
+					"value": "0x8127192c2e4703dfb47f087883cc3120fe061cb8"
+				},
+				{
+					"name": "Limit",
+					"value": 2
+				}
+			],
+			"result": {
+				"name": "_",
+				"value": [{
+					"broadcast": true,
+					"native_tx_amount": "242.4124 TLOS",
+					"host_tx_amount": "242412450000000000000",
+					"native_account_nonce": 2501,
+					"native_tx_recipient": "xbsc.ptokens",
+					"witnessed_timestamp": 1645259436,
+					"host_token_address": "0xb6c53431608e626ac81a9776ac3e999c5556717c",
+					"originating_tx_hash": "0x3220f2d89b95640697bf83fc00a7728ecbdf08f6e90707fc2a94c9bb55a58770",
+					"originating_address": "0x8127192c2e4703dfb47f087883cc3120fe061cb8",
+					"native_latest_block_number": 200669430,
+					"native_token_address": "eosio.token",
+					"broadcast_tx_hash": "5c2555db5afae95c9bde840690c5eaf0bb800986c8144f97eabee4a3bf0b7ae4",
+					"broadcast_timestamp": 1645259436
+				}, {
+					"broadcast": true,
+					"native_tx_amount": "0.0100 TLOS",
+					"host_tx_amount": "10000000000000000",
+					"native_account_nonce": 837,
+					"native_tx_recipient": "xbsc.ptokens",
+					"witnessed_timestamp": 1632912594,
+					"host_token_address": "0xb6c53431608e626ac81a9776ac3e999c5556717c",
+					"originating_tx_hash": "0x1c9f41d1c91eabf5a6b7581dd748fa07b7f22e9c81aee4d73899def21b3eed97",
+					"originating_address": "0x8127192c2e4703dfb47f087883cc3120fe061cb8",
+					"native_latest_block_number": 176000458,
+					"native_token_address": "eosio.token",
+					"broadcast_tx_hash": "23bcd827f3486bcae6013bd1e0c0edea7dbf777a38d9ff7c4e9aeabacfb56554",
+					"broadcast_timestamp": 1632913171
+				}]
+			}
+		}]
+	},
+	{
+		"name": "app_queryHostAddress",
+		"summary": "Returns query report by host address (filtering through `originating_address` field).",
+		"params": [{
+				"name": "Host Address",
+				"required": true,
+				"schema": {
+					"title": "address",
+					"type": "string"
+				}
+			},
+			{
+				"name": "Limit",
+				"required": true,
+				"schema": {
+					"title": "limit",
+					"type": "integer"
+				}
+			}
+		],
+		"result": {
+			"name": "Query sender",
+			"schema": {
+				"$ref": "#/components/schemas/ReportArray"
+			}
+		},
+		"examples": [{
+			"name": "TLOS on BSC",
+			"description": "app_getInfo result for the TLOS on BSC bridge",
+			"params": [{
+					"name": "Native Address",
+					"value": "0x6a96b17601c59d867123c5f45c0867fc735ed15a"
+				},
+				{
+					"name": "Limit",
+					"value": 3
+				}
+			],
+			"result": {
+				"name": "aaa",
+				"value": {
+					"broadcast": true,
+					"broadcast_tx_hash": "2fba8ff2ef546cf530eae7fc2a5cf88053c8ae0be7daf7596e42d89ad1e963c7",
+					"broadcast_timestamp": 1588613369,
+					"native_tx_hash": "2fba8ff2ef546cf530eae7fc2a5cf88053c8ae0be7daf7596e42d89ad1e963c7",
+					"native_signed_tx": "010000000272d4601f6ebaac226e8bd49f1241b3eec307f5872c706d89028bdea679275702010000008f483045022100cd57022bce91591738913614c11f08998d0f5b3c202e9a26c047f9d520b1befe02204c359b1d225300eb06f34f08e35ddc9db8edc5cb8a731353516064f4e4a7c73a01452045ee66d2c19ecac8b678d455fc8a63d70b944a72d38432fafb01a71687f69a467521020d308d2b70690483e5b950cf124f4346de240dd8358d096a426ba987aec6dba2acffffffffacebd1b43645d6809ed38cad0cc29e3519e49ebbb4c533c10a19cbb817b8010b010000008e473044022071b04bb2e9acb7aa415779a227b2ad1fd6812cdf3da865b3e081053a82d56868022050ba6db3cb5d86d745000956cae3fae2f2b5442c42307d34896036b5974dd871014520cd68093d7078d902928b566aeda53e1a4d75731584c2286e95fe009ac9ba1e087521020d308d2b70690483e5b950cf124f4346de240dd8358d096a426ba987aec6dba2acffffffff0210270000000000001600148a542de21122e1b1eb70740ab40005132d3708e260110f00000000001976a91400d3444dc0582859a193c966c5bad743aad5dac688ac00000000",
+					"native_tx_amount": 10000,
+					"native_tx_recipient": "tb1q3f2zmcs3ytsmr6msws9tgqq9zvknwz8zldk0zr",
+					"native_account_nonce": 6,
+					"originating_tx_hash": "0xca0094d0e8301d3f725f14f1180830669f19e82b8caf024b9ac629e137ed7d1b",
+					"originating_address": "0x6a96b17601c59d867123c5f45c0867fc735ed15a",
+					"witnessed_timestamp": 1588613365,
+					"host_latest_block_number": 7843001
+				}
+			}
+		}]
+	},
+	{
+		"name": "app_queryNativeReports",
+		"summary": "Returns native reports.",
+		"params": [{
+			"name": "Limit",
+			"required": true,
+			"schema": {
+				"title": "limit",
+				"type": "integer"
+			}
+		}],
+		"result": {
+			"name": "Query report",
+			"schema": {
+				"$ref": "#/components/schemas/NativeReportArray"
+			}
+		},
+		"examples": [{
+			"name": "TLOS on BSC",
+			"description": "app_queryNativeReports result for the TLOS on BSC bridge",
+			"params": [{
+				"name": "Limit",
+				"value": 2
+			}],
+			"result": {
+				"name": "_",
+				"value": [{
+					"broadcast": true,
+					"native_tx_amount": "32.6844 TLOS",
+					"host_tx_amount": "32684440186879575074",
+					"native_account_nonce": 2712,
+					"native_tx_recipient": "xbsc.ptokens",
+					"witnessed_timestamp": 1646678389,
+					"host_token_address": "0xb6c53431608e626ac81a9776ac3e999c5556717c",
+					"originating_tx_hash": "0x8ec38f5d3a0eee80057f62dd5b687e4677e243c6f3578ca8563b375c78b83ae9",
+					"originating_address": "0x5ff83e58edcb37c55b2845b45a1f301bd36e4cec",
+					"native_latest_block_number": 203503569,
+					"native_token_address": "eosio.token",
+					"broadcast_tx_hash": "812d786c9610352e4ecb1cea210eb31a64d8d6f17ab733232384db75e19b4534",
+					"broadcast_timestamp": 1646678389
+				}, {
+					"broadcast": true,
+					"native_tx_amount": "143.0669 TLOS",
+					"host_tx_amount": "143066986732378518659",
+					"native_account_nonce": 2711,
+					"native_tx_recipient": "xbsc.ptokens",
+					"witnessed_timestamp": 1646673970,
+					"host_token_address": "0xb6c53431608e626ac81a9776ac3e999c5556717c",
+					"originating_tx_hash": "0xa0ccf13bcc695117df7a2e28bc8a32fb97e3962a41efa91f3e5e3c872db53d94",
+					"originating_address": "0xb882b087bd80a0258f19d907849c8d64cac3dba1",
+					"native_latest_block_number": 203494569,
+					"native_token_address": "eosio.token",
+					"broadcast_tx_hash": "c1ca51d8df16894855a30ff27a766a8a5cdf3b027377a80ab85900c5c88cbdc3",
+					"broadcast_timestamp": 1646673971
+				}]
+			}
+		}]
+	},
+	{
+		"name": "app_queryHostReports",
+		"summary": "Returns query report by host reports.",
+		"params": [{
+			"name": "Limit",
+			"required": true,
+			"schema": {
+				"title": "limit",
+				"type": "integer"
+			}
+		}],
+		"result": {
+			"name": "Query report",
+			"schema": {
+				"$ref": "#/components/schemas/HostReportArray"
+			}
+		},
+		"examples": [{
+			"name": "TLOS on BSC",
+			"description": "app_queryHostReports result for the TLOS on BSC bridge",
+			"params": [{
+				"name": "Limit",
+				"value": 2
+			}],
+			"result": {
+				"name": "_",
+				"value": [{
+					"broadcast": true,
+					"host_tx_hash": "0x0c65407718591a3c53bbf2937bdefb1a35dc0dbb2028704484c1d21aae3dcc82",
+					"host_tx_amount": "498474326700000000000",
+					"host_tx_recipient": "0x401563c62ef5bbd50a2f4a21c4c1a2c4bb5179ea",
+					"witnessed_timestamp": 1646644951,
+					"host_token_address": "0xb6c53431608e626ac81a9776ac3e999c5556717c",
+					"originating_tx_hash": "9d23ef098b9f3371316a49620585900421e4ac5930e3a27d89c962f56eb1f0a7",
+					"originating_address": "stjklmjsc2gj",
+					"native_token_address": "eosio.token",
+					"any_sender_nonce": null,
+					"host_account_nonce": 4011,
+					"host_latest_block_number": 15847576,
+					"broadcast_tx_hash": "0x0c65407718591a3c53bbf2937bdefb1a35dc0dbb2028704484c1d21aae3dcc82",
+					"broadcast_timestamp": 1646644951,
+					"any_sender_tx": null
+				}, {
+					"broadcast": true,
+					"host_tx_hash": "0x4d9a1b8b4db296dd63bd7337ef7e385a1c71d49c80835dfe18c3bc60ff3e9956",
+					"host_tx_amount": "499999500000000000000",
+					"host_tx_recipient": "0x401563c62ef5bbd50a2f4a21c4c1a2c4bb5179ea",
+					"witnessed_timestamp": 1646644791,
+					"host_token_address": "0xb6c53431608e626ac81a9776ac3e999c5556717c",
+					"originating_tx_hash": "b2e3df6cfa8a4b77b933f65cc70c89d52aff097f02c83e24ebc866b12d161d91",
+					"originating_address": "stjklmjsc2gj",
+					"native_token_address": "eosio.token",
+					"any_sender_nonce": null,
+					"host_account_nonce": 4010,
+					"host_latest_block_number": 15847522,
+					"broadcast_tx_hash": "0x4d9a1b8b4db296dd63bd7337ef7e385a1c71d49c80835dfe18c3bc60ff3e9956",
+					"broadcast_timestamp": 1646644795,
+					"any_sender_tx": null
+				}]
+			}
+		}]
+	},
+	{
+		"name": "app_queryIncomingTxHash",
+		"summary": "Returns query report by originating transaction hash.",
+		"params": [{
+			"name": "Originating Transaction Hash",
+			"required": true,
+			"schema": {
+				"title": "address",
+				"type": "string"
+			}
+		}],
+		"result": {
+			"name": "Transaction info",
+			"schema": {
+				"$ref": "#/components/schemas/Report"
+			}
+		},
+		"examples": [{
+			"name": "TLOS on BSC",
+			"description": "app_queryIncomingTxHash result for a BSC transaction",
+			"params": [{
+				"name": "Hash",
+				"value": "0xdf4212d8e8b70ba1afb87b7dde0713e9c87bfbe23a39a9c2fb12141f89367ac5"
+			}],
+			"result": {
+				"name": "_",
+				"value": {
+					"broadcast": true,
+					"native_tx_amount": "0.9975 TLOS",
+					"host_tx_amount": "997500000000000000",
+					"native_account_nonce": 2537,
+					"native_tx_recipient": "xbsc.ptokens",
+					"witnessed_timestamp": 1645427585,
+					"host_token_address": "0xb6c53431608e626ac81a9776ac3e999c5556717c",
+					"originating_tx_hash": "0xdf4212d8e8b70ba1afb87b7dde0713e9c87bfbe23a39a9c2fb12141f89367ac5",
+					"originating_address": "0xc8d59c57b8c58eac1622c7a639e10bf8b1e3df9d",
+					"native_latest_block_number": 201007227,
+					"native_token_address": "eosio.token",
+					"broadcast_tx_hash": "bfa44f076fc30608fc17536f8b8c7d3ea35aec85b1abc407d6a6cd670dbd5cca",
+					"broadcast_timestamp": 1645427588
+				}
+			}
+		}]
+	},
+	{
+		"name": "app_queryBroadcastTxHash",
+		"summary": "Returns query report by broadcast transaction hash.",
+		"params": [{
+			"name": "Broadcast Transaction Hash",
+			"required": true,
+			"schema": {
+				"title": "address",
+				"type": "string"
+			}
+		}],
+		"result": {
+			"name": "Query report",
+			"schema": {
+				"$ref": "#/components/schemas/Report"
+			}
+		},
+		"examples": [{
+			"name": "TLOS on BSC",
+			"description": "app_queryBroadcastTxHash result for the TLOS on BSC bridge",
+			"params": [{
+				"name": "Transaction Hash",
+				"value": "bfa44f076fc30608fc17536f8b8c7d3ea35aec85b1abc407d6a6cd670dbd5cca"
+			}],
+			"result": {
+				"name": "_",
+				"value": {
+					"broadcast": true,
+					"native_tx_amount": "0.9975 TLOS",
+					"host_tx_amount": "997500000000000000",
+					"native_account_nonce": 2537,
+					"native_tx_recipient": "xbsc.ptokens",
+					"witnessed_timestamp": 1645427585,
+					"host_token_address": "0xb6c53431608e626ac81a9776ac3e999c5556717c",
+					"originating_tx_hash": "0xdf4212d8e8b70ba1afb87b7dde0713e9c87bfbe23a39a9c2fb12141f89367ac5",
+					"originating_address": "0xc8d59c57b8c58eac1622c7a639e10bf8b1e3df9d",
+					"native_latest_block_number": 201007227,
+					"native_token_address": "eosio.token",
+					"broadcast_tx_hash": "bfa44f076fc30608fc17536f8b8c7d3ea35aec85b1abc407d6a6cd670dbd5cca",
+					"broadcast_timestamp": 1645427588
+				}
+			}
+		}]
+	}
+]
