@@ -101,19 +101,22 @@
 				"value": "a0fdf326e25b4ce232eea86985766b8f32583913cdf378c22a586c61d9f5c558"
 			}],
 			"result": {
-				"broadcast": true,
-				"broadcast_tx_hash": "0x5aad6e777d7ba065aaf5f16b4f03cc6b5afe58bd3a44c04953ae8a193a1eed2b",
-				"broadcast_timestamp": 1637617921,
-				"host_tx_hash": "0x5aad6e777d7ba065aaf5f16b4f03cc6b5afe58bd3a44c04953ae8a193a1eed2b",
-				"host_tx_amount": "9990000000000000",
-				"host_tx_recipient": "0x29020d71b03c712d4bf472b23a9e677bd3db24ee",
-				"host_account_nonce": 2,
-				"originating_tx_hash": "a0fdf326e25b4ce232eea86985766b8f32583913cdf378c22a586c61d9f5c558",
-				"originating_address": "3Aji5Tvyr5fVm7V6s737j59uPGmic5eLQA",
-				"witnessed_timestamp": 1637617917,
-				"native_latest_block_number": 710887,
-				"any_sender_tx": null,
-				"any_sender_nonce": null
+				"name": "_",
+				"value": {
+					"broadcast": true,
+					"broadcast_tx_hash": "0x5aad6e777d7ba065aaf5f16b4f03cc6b5afe58bd3a44c04953ae8a193a1eed2b",
+					"broadcast_timestamp": 1637617921,
+					"host_tx_hash": "0x5aad6e777d7ba065aaf5f16b4f03cc6b5afe58bd3a44c04953ae8a193a1eed2b",
+					"host_tx_amount": "9990000000000000",
+					"host_tx_recipient": "0x29020d71b03c712d4bf472b23a9e677bd3db24ee",
+					"host_account_nonce": 2,
+					"originating_tx_hash": "a0fdf326e25b4ce232eea86985766b8f32583913cdf378c22a586c61d9f5c558",
+					"originating_address": "3Aji5Tvyr5fVm7V6s737j59uPGmic5eLQA",
+					"witnessed_timestamp": 1637617917,
+					"native_latest_block_number": 710887,
+					"any_sender_tx": null,
+					"any_sender_nonce": null
+				}
 			}
 		}
 	]
