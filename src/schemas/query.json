@@ -1,6 +1,5 @@
 {
 	"HostReport": {
-		"name": "HostReport",
 		"type": "object",
 		"properties": {
 			"broadcast": {
@@ -40,7 +39,7 @@
 				"type": "string"
 			},
 			"any_sender_nonce": {
-				"type": "integer"
+				"type": ["integer", "null"]
 			},
 			"host_account_nonce": {
 				"title": "host blockchain account nonce",
@@ -59,14 +58,13 @@
 				"type": "integer"
 			},
 			"any_sender_tx": {
-				"type": "null"
+				"type": ["string", "null"]
 			}
 		},
-		"required": ["broadcast", "host_tx_hash", "host_tx_amount", "host_tx_recipient", "witnessed_timestamp", "host_token_address", "originating_tx_hash", "originating_address", "native_token_address", "any_sender_nonce", "host_account_nonce", "broadcast_tx_hash", "broadcast_timestamp", "any_sender_tx"],
+		"required": ["broadcast", "witnessed_timestamp", "originating_tx_hash", "originating_address", "broadcast_tx_hash", "broadcast_timestamp"],
 		"additionalProperties": true
 	},
 	"NativeReport": {
-		"name": "NativeReport",
 		"type": "object",
 		"properties": {
 			"broadcast": {
@@ -106,7 +104,7 @@
 				"type": "string"
 			},
 			"any_sender_nonce": {
-				"type": "null"
+				"type": ["integer", "null"]
 			},
 			"native_account_nonce": {
 				"title": "native blockchain account nonce",
@@ -125,10 +123,10 @@
 				"type": "integer"
 			},
 			"any_sender_tx": {
-				"type": "null"
+				"type": ["string", "null"]
 			}
 		},
-		"required": ["broadcast", "native_tx_hash", "native_tx_amount", "native_tx_recipient", "witnessed_timestamp", "host_token_address", "originating_tx_hash", "originating_address", "native_token_address", "any_sender_nonce", "native_account_nonce", "broadcast_tx_hash", "broadcast_timestamp", "any_sender_tx"],
+		"required": ["broadcast", "native_tx_hash", "native_tx_amount", "native_tx_recipient", "witnessed_timestamp", "originating_tx_hash", "originating_address", "native_account_nonce", "broadcast_tx_hash", "broadcast_timestamp"],
 		"additionalProperties": true
 	},
 	"HostReportArray": {
