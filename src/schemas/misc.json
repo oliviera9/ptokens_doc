@@ -2,7 +2,22 @@
 	"BridgeInfo": {
 		"title": "BridgeInfo",
 		"type": "object",
-		"required": ["host_symbol", "host_network", "native_symbol", "native_network", "host_blockchain", "native_blockchain", "last_processed_host_block", "last_processed_native_block", "public_key", "versions", "proof_type", "ipfs_multihash", "host_identity", "min_transfer_amount"],
+		"required": [
+			"host_blockchain",
+			"host_identity",
+			"host_network",
+			"host_symbol",
+			"ipfs_multihash",
+			"last_processed_host_block",
+			"last_processed_native_block",
+			"min_transfer_amount",
+			"native_blockchain",
+			"native_network",
+			"native_symbol",
+			"proof_type",
+			"public_key",
+			"versions"
+		],
 		"properties": {
 			"host_symbol": {
 				"title": "host symbol",
@@ -42,7 +57,7 @@
 			},
 			"public_key": {
 				"title": "public key",
-                "type": ["string", "null"] 
+				"type": ["string", "null"]
 			},
 			"native_smart_contract_address": {
 				"title": "smart contract address in native blockchain",
