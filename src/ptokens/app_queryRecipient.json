@@ -1,6 +1,6 @@
 [{
 	"name": "app_queryRecipient",
-	"summary": "Returns query report by recipient.",
+	"summary": "Returns query reports by recipient.",
 	"params": [{
 			"name": "Recipient Address",
 			"required": true,

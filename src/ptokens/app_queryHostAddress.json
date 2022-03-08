@@ -1,6 +1,6 @@
 [{
 	"name": "app_queryHostAddress",
-	"summary": "Returns native query report by host address (filtering through `originating_address` field).",
+	"summary": "Returns native query reports by host address (filtering through `originating_address` field).",
 	"params": [{
 			"name": "Host Address",
 			"required": true,

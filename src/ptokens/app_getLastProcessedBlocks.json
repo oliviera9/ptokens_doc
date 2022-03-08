@@ -1,6 +1,6 @@
 [{
 		"name": "app_getLastProcessedHostBlock",
-		"summary": "Returns last processed host block number.",
+		"summary": "Returns last processed host blockchain block number.",
 		"params": [],
 		"result": {
 			"name": "Last processed host block number",
@@ -29,7 +29,7 @@
 	},
 	{
 		"name": "app_getLastProcessedNativeBlock",
-		"summary": "Returns last processed native block number.",
+		"summary": "Returns last processed native blockchain block number.",
 		"params": [],
 		"result": {
 			"name": "Last processed native block number",

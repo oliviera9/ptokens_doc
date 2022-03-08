@@ -1,6 +1,6 @@
 [{
 	"name": "app_querySender",
-	"summary": "Returns query report by originating address.",
+	"summary": "Returns query reports by originating address.",
 	"params": [{
 			"name": "Sender Address",
 			"required": true,
