@@ -39,11 +39,10 @@ $ pyspelling -c spellcheck.yaml
 Spelling check passed :)
 ```
 
-The third tool can validate a live JSON-RPC provider hosted at
-`http://localhost:8545` against the specification:
+The third tool can validate a live JSON-RPC provider against the specification:
 
 ```console
-$ ./scripts/debug.sh eth_getBlockByNumber \"0xc7d772\",false
+$ ./scripts/debug.sh https://pbtconbsc-node-1a.eu.ngrok.io/v2/pbtc-on-bsc/ app_queryReport \"native\",2
 data.json valid
 ```
 
