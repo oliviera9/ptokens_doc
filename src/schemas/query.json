@@ -12,7 +12,7 @@
 			},
 			"host_tx_amount": {
 				"title": "host blockchain transaction amount",
-				"type": "string"
+				"type": ["integer", "string"]
 			},
 			"host_tx_recipient": {
 				"title": "host blockchain transaction recipient",
@@ -77,7 +77,7 @@
 			},
 			"native_tx_amount": {
 				"title": "native blockchain transaction amount",
-				"type": "string"
+				"type": ["integer", "string"]
 			},
 			"native_tx_recipient": {
 				"title": "native blockchain transaction recipient",
@@ -126,7 +126,7 @@
 				"type": ["string", "null"]
 			}
 		},
-		"required": ["broadcast", "native_tx_hash", "native_tx_amount", "native_tx_recipient", "witnessed_timestamp", "originating_tx_hash", "originating_address", "native_account_nonce", "broadcast_tx_hash", "broadcast_timestamp"],
+		"required": ["broadcast", "native_tx_amount", "native_tx_recipient", "witnessed_timestamp", "originating_tx_hash", "originating_address", "native_account_nonce", "broadcast_tx_hash", "broadcast_timestamp"],
 		"additionalProperties": true
 	},
 	"HostReportArray": {
@@ -142,17 +142,45 @@
 		}
 	},
 	"Report": {
-		"oneOf" : [{
+		"oneOf": [{
 			"$ref": "#/components/schemas/HostReport"
 		}, {
 			"$ref": "#/components/schemas/NativeReport"
 		}]
 	},
 	"ReportArray": {
-		"oneOf":  [{
+		"oneOf": [{
 			"$ref": "#/components/schemas/HostReportArray"
 		}, {
 			"$ref": "#/components/schemas/NativeReportArray"
 		}]
+	},
+	"HostReports": {
+		"type": "object",
+		"properties": {
+			"totalPages": {
+				"title": "total pages",
+				"type": "integer"
+			},
+			"reports": {
+				"title": "reports",
+				"$ref": "#/components/schemas/HostReportArray"
+			}
+
+		}
+	},
+	"NativeReports": {
+		"type": "object",
+		"properties": {
+			"totalPages": {
+				"title": "total pages",
+				"type": "integer"
+			},
+			"reports": {
+				"title": "reports",
+				"$ref": "#/components/schemas/NativeReportArray"
+			}
+
+		}
 	}
 }
