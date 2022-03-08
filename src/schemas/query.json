@@ -61,11 +61,21 @@
 				"type": ["string", "null"]
 			}
 		},
-		"required": ["broadcast", "witnessed_timestamp", "originating_tx_hash", "originating_address", "broadcast_tx_hash", "broadcast_timestamp"],
-		"additionalProperties": true
+		"required": [
+			"any_sender_nonce",
+			"broadcast",
+			"broadcast_timestamp",
+			"broadcast_tx_hash",
+			"host_account_nonce",
+			"host_tx_amount",
+			"host_tx_hash",
+			"host_tx_recipient",
+			"originating_address",
+			"originating_tx_hash",
+			"witnessed_timestamp"
+		]
 	},
 	"NativeReport": {
-		"type": "object",
 		"properties": {
 			"broadcast": {
 				"title": "broadcasted",
@@ -126,8 +136,17 @@
 				"type": ["string", "null"]
 			}
 		},
-		"required": ["broadcast", "native_tx_amount", "native_tx_recipient", "witnessed_timestamp", "originating_tx_hash", "originating_address", "native_account_nonce", "broadcast_tx_hash", "broadcast_timestamp"],
-		"additionalProperties": true
+		"required": [
+			"broadcast",
+			"broadcast_timestamp",
+			"broadcast_tx_hash",
+			"native_account_nonce",
+			"native_tx_amount",
+			"native_tx_recipient",
+			"originating_address",
+			"originating_tx_hash",
+			"witnessed_timestamp"
+		]
 	},
 	"HostReportArray": {
 		"type": "array",
